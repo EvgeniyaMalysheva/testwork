@@ -59,7 +59,7 @@ public class MainPage {
         return this;
     }
 
-    @Step("Проверяем, что книга называется {bookName}")
+    @Step("Проверяем, что книга (серия книг) называется {bookName}")
     public void checkBookName(String bookName) {
         $(searchContent).shouldHave(text(bookName));
 

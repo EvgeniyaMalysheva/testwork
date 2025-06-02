@@ -8,11 +8,13 @@ import org.junit.jupiter.params.provider.ValueSource;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.$;
+
 import static io.qameta.allure.Allure.step;
 
 import pages.MainPage;
 
 @Tag("testwork_test")
+@Owner("Evgeniya Malysheva")
 public class NewWorkTest extends TestBase {
 
     MainPage mainPage = new MainPage();
@@ -23,7 +25,6 @@ public class NewWorkTest extends TestBase {
     @ParameterizedTest(name = "Для поискового запроса {0} должен отдавать не пустой список книг")
     @Tag("BLOCKER")
     @DisplayName("TC_WEB_1: Проверка на непустой результат поиска книг")
-    @Owner("Evgeniya Malysheva")
     void searchResultsShouldNotBeEmpty(String searchQuery) {
         mainPage.openMainPage()
                 .acceptCookie()
@@ -38,7 +39,6 @@ public class NewWorkTest extends TestBase {
     @ParameterizedTest(name = "Для поискового запроса {0} в категории Серии должна быть {1}")
     @Tag("BLOCKER")
     @DisplayName("TC_WEB_2: Проверка поиска определенной серии книг")
-    @Owner("Evgeniya Malysheva")
     void searchResultsShouldContainExpectedBookSeries(String searchQuery, String bookName) {
         mainPage.openMainPage()
                 .acceptCookie()
@@ -51,7 +51,6 @@ public class NewWorkTest extends TestBase {
     @ParameterizedTest(name = "Для поискового запроса {0} в категории Книги должна быть {1}")
     @Tag("BLOCKER")
     @DisplayName("TC_WEB_3: Проверка поиска определенной книги")
-    @Owner("Evgeniya Malysheva")
     void searchResultsShouldContainExpectedBooks(String searchQuery, String bookName) {
         mainPage.openMainPage()
                 .acceptCookie()
@@ -62,7 +61,6 @@ public class NewWorkTest extends TestBase {
 
     @Test
     @DisplayName("TC_WEB_4: Проверка страницы ввода промокода")
-    @Owner("Evgeniya Malysheva")
     public void openPromoCodeWindowTest() {
         mainPage.openMainPage();
         step("Нажимаем на кнопку Промокод", () -> {
@@ -80,7 +78,6 @@ public class NewWorkTest extends TestBase {
 
     @Test
     @DisplayName("TC_WEB_5: Поиск раздела Переговоры в выпадающем каталоге")
-    @Owner("Evgeniya Malysheva")
     public void checkCatalogTest() {
         mainPage.openMainPage();
         step("Нажимаем на кнопку Каталог", () -> {
@@ -96,7 +93,6 @@ public class NewWorkTest extends TestBase {
 
     @Test
     @DisplayName("TC_WEB_6: Переход в сторонний ресурс")
-    @Owner("Evgeniya Malysheva")
     public void moveToAnotherSiteTest() {
         mainPage.openMainPage();
         step("Нажимаем на значок Дзен в футере главной страницы", () -> {

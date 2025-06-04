@@ -5,12 +5,6 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
-import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Selenide.*;
-import static com.codeborne.selenide.Selenide.$;
-
-import static io.qameta.allure.Allure.step;
-
 import pages.MainPage;
 
 @Tag("testwork_test")
@@ -27,7 +21,6 @@ public class NewWorkTest extends TestBase {
     @DisplayName("TC_WEB_1: Проверка на непустой результат поиска книг")
     void searchResultsShouldNotBeEmpty(String searchQuery) {
         mainPage.openMainPage()
-                .acceptCookie()
                 .fillBookSearchInput(searchQuery)
                 .checkFoundBooksNotZero();
     }
@@ -41,7 +34,6 @@ public class NewWorkTest extends TestBase {
     @DisplayName("TC_WEB_2: Проверка поиска определенной серии книг")
     void searchResultsShouldContainExpectedBookSeries(String searchQuery, String bookName) {
         mainPage.openMainPage()
-                .acceptCookie()
                 .fillBookSearchInput(searchQuery)
                 .clickNecessaryTab("Серии")
                 .checkBookName(bookName);
@@ -61,50 +53,27 @@ public class NewWorkTest extends TestBase {
 
     @Test
     @DisplayName("TC_WEB_4: Проверка страницы ввода промокода")
-    public void openPromoCodeWindowTest() {
-        mainPage.openMainPage();
-        step("Нажимаем на кнопку Промокод", () -> {
-            mainPage.acceptCookie();
-            $("[data-testid='lowerMenu__item--promoCodes']")
-                    .click();
-        });
+    public void checkPromoCodeWindowTest() {
+        mainPage.openMainPage()
+                .pressPromoCodeButton()
+                .checkPromoCodeActivationModule();
 
-        step("Проверяем надпись Активируйте промокод и поле для ввода", () -> {
-            $("h1.PromocodeActivation-module__ws3j9G__content__title")
-                    .shouldHave(text("Активируйте промокод"));
-            $("input[name='promocode']").shouldBe(visible);
-        });
     }
 
     @Test
     @DisplayName("TC_WEB_5: Поиск раздела Переговоры в выпадающем каталоге")
-    public void checkCatalogTest() {
-        mainPage.openMainPage();
-        step("Нажимаем на кнопку Каталог", () -> {
-            mainPage.acceptCookie();
-            $("[data-testid='header-catalog-button']").click();
-        });
-        step("Проверяем всплывающее меню каталога и наличие в нем раздела Переговоры", () -> {
-            $("[data-testid='genres_popup']").should(appear);
-            $$("div.Column-module__Tc-eGa__column")
-                    .findBy(text("Переговоры")).shouldBe(visible);
-        });
+    public void checkCatalogNegotiationsGenreTest() {
+        mainPage.openMainPage()
+                .pressCatalogButton()
+                .checkCatalogGenre("Переговоры");
     }
 
     @Test
     @DisplayName("TC_WEB_6: Переход в сторонний ресурс")
     public void moveToAnotherSiteTest() {
-        mainPage.openMainPage();
-        step("Нажимаем на значок Дзен в футере главной страницы", () -> {
-            mainPage.acceptCookie();
-            $("a[href='https://dzen.ru/litres']").click();
-        });
-        step("Переключаемся на открывшуюся вкладку", () -> {
-            switchTo().window(1);
-        });
-        step("Проверяем, что действительно открылся Дзен", () -> {
-            $("[data-testid='rotator-text']").shouldHave(text("Найти в Дзене"));
-        });
+        mainPage.openMainPage()
+                .pressDzenButton()
+                .checkMoveToDzen();
     }
 }
 

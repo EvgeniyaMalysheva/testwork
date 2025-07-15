@@ -7,7 +7,6 @@ import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
-import static io.qameta.allure.Allure.step;
 
 public class MainPage {
 
@@ -22,7 +21,8 @@ public class MainPage {
             catalogButton = $("[data-testid='header-catalog-button']"),
             genrePopup = $("[data-testid='genres_popup']"),
             dzenButton = $("a[href='https://dzen.ru/litres']"),
-            dzenSearchText = $("[data-testid='rotator-text']");
+            dzenSearchText = $("[data-testid='rotator-text']"),
+            cartButton = $("[data-testid='tab-basket']");
 
     private final String searchContent = "[data-testid='search__content--wrapper']",
             genresList = "div.Column-module__Tc-eGa__column";
@@ -125,6 +125,14 @@ public class MainPage {
         switchTo().window(1);
         dzenSearchText.shouldHave(text("Найти в Дзене"));
 
+    }
+
+    @Step("Нажимаем на значок Дзен в футере главной страницы")
+    public MainPage pressCartButton() {
+        acceptCookie();
+        cartButton.click();
+
+        return this;
     }
 
 }

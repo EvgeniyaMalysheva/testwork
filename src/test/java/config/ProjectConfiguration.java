@@ -20,7 +20,7 @@ public class ProjectConfiguration {
         Configuration.browserVersion = webConfig.getBrowserVersion();
         Configuration.browserSize = webConfig.getBrowserSize();
 
-        if (System.getProperty("selenoidCredentials") != null) {
+        if (System.getProperty("getSelenoidUser") != null) {
             Configuration.remote = getSelenoidConfiguration();
 
             DesiredCapabilities capabilities = new DesiredCapabilities();

@@ -20,27 +20,23 @@ public interface WebConfig extends Config {
     @DefaultValue("CHROME")
     Browser getBrowser();
 
-     @Key("browserVersion")
+    @Key("browserVersion")
     @DefaultValue("127.0")
     String getBrowserVersion();
 
-     @Key("browserSize")
+    @Key("browserSize")
     @DefaultValue("1920x1080")
     String getBrowserSize();
 
-//    @Key("isRemote")
-//    @DefaultValue("false")
-//    boolean isRemote();
-
-     @Key("selenoidUser")
+    @Key("selenoidUser")
     @DefaultValue("${SELENOID_USER}")
     String getSelenoidUser();
 
-     @Key("selenoidPassword")
+    @Key("selenoidPassword")
     @DefaultValue("${SELENOID_PASSWORD}")
     String getSelenoidPassword();
 
-     @Key("selenoidUrl")
+    @Key("selenoidUrl")
     @DefaultValue("${SELENOID_HOST}")
     String getSelenoidUrl();
 

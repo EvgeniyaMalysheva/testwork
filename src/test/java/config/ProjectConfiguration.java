@@ -15,12 +15,12 @@ public class ProjectConfiguration {
     public void webConfig() {
         Configuration.baseUrl = webConfig.getBaseUrl();
         Configuration.pageLoadStrategy = webConfig.getPageLoadStrategy();
-        Configuration.browser = webConfig.getBrowser().toString();
+        Configuration.browser = webConfig.getBrowser();
 
         Configuration.browserVersion = webConfig.getBrowserVersion();
         Configuration.browserSize = webConfig.getBrowserSize();
 
-        if (System.getProperty("selenoidCredentials") != null) {
+        if (System.getProperty("selenoidUser") != null) {
             Configuration.remote = getSelenoidConfiguration();
 
             DesiredCapabilities capabilities = new DesiredCapabilities();

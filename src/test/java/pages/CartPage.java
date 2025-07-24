@@ -15,8 +15,6 @@ public class CartPage {
             promoTitle = $(".FourthArtsOffer-module__Yb0qSq__title"),
             promoTermsLink = $(".FourthArtsOffer-module__Yb0qSq__link"),
             promoTermsTitle = $(".CmsEntity-module__Su2lMG__title");
-    protected final String
-            promoName = "Четвёртая книга в подарок";
 
     @Step("Открываем главную страницу")
     public CartPage openCartPage() {
@@ -34,8 +32,8 @@ public class CartPage {
         return this;
     }
 
-    @Step("Видим название акции Четвёртая книга в подарок")
-    public CartPage checkPromoName() {
+    @Step("Проверяем название акции")
+    public CartPage checkPromoName(String promoName) {
         acceptCookie();
         promoTitle.shouldHave(text(promoName));
 
@@ -50,8 +48,8 @@ public class CartPage {
         return this;
     }
 
-    @Step("Отображаются условия акции Четвёртая книга в подарок")
-    public void checkPromoTermsTitle() {
+    @Step("Отображаются условия корректной акции")
+    public void checkPromoTermsTitle(String promoName) {
         acceptCookie();
         promoTermsTitle.shouldHave(text(promoName));
     }

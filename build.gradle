@@ -28,14 +28,12 @@ dependencies {
             'org.junit.jupiter:junit-jupiter:5.9.3',
             'commons-io:commons-io:2.19.0',
             'com.github.javafaker:javafaker:1.0.2',
-            'com.codeborne:pdf-test:1.5.0',
-            'com.codeborne:xls-test:1.4.3',
-            'com.opencsv:opencsv:5.11',
-            'com.google.code.gson:gson:2.13.1',
             'com.fasterxml.jackson.core:jackson-core:2.19.0',
             'com.fasterxml.jackson.core:jackson-databind:2.19.0',
             'io.qameta.allure:allure-selenide:2.29.1',
-            'org.assertj:assertj-core:3.27.3'
+            'org.assertj:assertj-core:3.27.3',
+            'org.aeonbits.owner:owner:1.0.12',
+            'org.projectlombok:lombok:1.18.38'
     )
 }
 

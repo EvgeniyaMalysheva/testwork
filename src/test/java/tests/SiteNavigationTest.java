@@ -1,10 +1,9 @@
-package tests.ui;
+package tests;
 
 import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import tests.TestBase;
 
 @Tag("testwork_test")
 @Owner("Evgeniya Malysheva")

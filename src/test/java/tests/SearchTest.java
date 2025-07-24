@@ -1,16 +1,18 @@
-package tests.ui;
+package tests;
 
+import io.qameta.allure.Epic;
 import io.qameta.allure.Owner;
+import io.qameta.allure.Story;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
-import tests.TestBase;
-
 @Tag("testwork_test")
 @Owner("Evgeniya Malysheva")
+@Epic("Litres UI")
+@Story("Search Content")
 public class SearchTest extends TestBase {
 
     @ValueSource(strings = {
@@ -30,7 +32,6 @@ public class SearchTest extends TestBase {
             "Толстой, Детство. Отрочество. Юность"
     })
     @ParameterizedTest(name = "Для поискового запроса {0} в категории Серии должна быть {1}")
-    @Tag("BLOCKER")
     @DisplayName("TC_UI_2: Проверка поиска определенной серии книг")
     void searchResultsShouldContainExpectedBookSeries(String searchQuery, String bookName) {
         mainPage.openMainPage()

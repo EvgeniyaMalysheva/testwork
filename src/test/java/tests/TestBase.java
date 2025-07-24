@@ -1,18 +1,17 @@
 package tests;
 
-import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
+import config.ProjectConfiguration;
+import config.WebConfigProvider;
+import config.WebConfig;
 import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.*;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import pages.CartPage;
 import pages.MainPage;
-
-import java.util.Map;
 
 import static com.codeborne.selenide.Selenide.*;
 
@@ -20,26 +19,12 @@ public class TestBase {
 
     protected MainPage mainPage = new MainPage();
     protected CartPage cartPage = new CartPage();
+    protected static final WebConfig webConfig = WebConfigProvider.INSTANCE.getConfig();
 
     @BeforeAll
     static void setBrowserParams() {
-        Configuration.baseUrl = "https://www.litres.ru";
-        Configuration.pageLoadStrategy = "eager";
-        Configuration.browser = System.getProperty("browser","chrome");
-        Configuration.browserVersion = System.getProperty("version","127.0");
-        Configuration.browserSize = System.getProperty("resolution","1920x1080");
-        Configuration.remote = "https://"
-                + System.getProperty("selenoidCredentials","user1:1234@")
-                + System.getProperty("selenoidUrl","selenoid.autotests.cloud")
-                + "/wd/hub";
-
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("selenoid:options", Map.<String, Object>of(
-                "enableVNC", true,
-                "enableVideo", true
-        ));
-        Configuration.browserCapabilities = capabilities;
-
+        ProjectConfiguration projectConfiguration = new ProjectConfiguration(webConfig);
+        projectConfiguration.webConfig();
     }
 
     @BeforeEach
@@ -55,6 +40,5 @@ public class TestBase {
         Attach.addVideo();
         closeWebDriver();
     }
-
 }
 

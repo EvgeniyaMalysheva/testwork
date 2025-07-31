@@ -28,16 +28,6 @@
 - Переход в сторонний ресурс из футера страницы
 - Просмотр условий промо-акции
 
-2.API-тесты:
-- Тест1
-- Тест2
-- Тест3
-
-3.MOBILE-тесты:
-- Тест1
-- Тест2
-- Тест3
-
 ## <img alt="Jenkins" height="25" src="media/Jenkins.svg" width="25"/> Сборка в [Jenkins](https://jenkins.autotests.cloud/job/C35_Evgenia_Malysheva_testwork/)
 
 

@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 
 @Tag("testwork_test")
 @Owner("Evgeniya Malysheva")
+@DisplayName("Тесты навигации по сайту")
 public class SiteNavigationTest extends TestBase {
 
     @Test

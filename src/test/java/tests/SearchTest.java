@@ -13,7 +13,7 @@ import org.junit.jupiter.params.provider.ValueSource;
 @Owner("Evgeniya Malysheva")
 @Epic("Litres UI")
 @Story("Search Content")
-@DisplayName("Тесты поиска")
+@DisplayName("Поиск")
 public class SearchTest extends TestBase {
 
     @ValueSource(strings = {

@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 @Tag("testwork_test")
 @Owner("Evgeniya Malysheva")
-@DisplayName("Тесты страницы Корзина")
+@DisplayName("Корзина")
 public class CartTest extends TestBase {
     protected final String promoName = "Четвёртая книга в подарок";
 

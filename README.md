@@ -66,7 +66,7 @@ testwork
 "-DselenoidCredentials=${SELENOID_USER}:${SELENOID_PASSWORD}@"
 "-DselenoidUrl=${SELENOID_HOST}""
 ```
-
+____
 ## <img alt="Allure" height="25" src="media/Allure.svg" width="25"/></a>  <a name="Allure"></a>Allure [Report](https://jenkins.autotests.cloud/job/C35_Evgenia_Malysheva_testwork/allure/)	</a>
 Allure Report - это инструмент для генерации и представления отчетов о результатах автоматизированного тестирования.
 Тут можно быстро оценить результаты тестового прогона, посмотреть на шаги теста и пробежаться по приложенным аттачам (скрины, логи, видео и т.п.)
@@ -76,8 +76,8 @@ Allure Report - это инструмент для генерации и пре�
 <p align="center">  
 <img title="Allure Overview Dashboard" src="media/AllureReport.jpg" width="850">  
 </p>  
-____
 
+____
 ## <img alt="AllureTestOps" height="25" src="media/AllureTestOps.jpg" width="25"/></a>  <a name="AllureTestOps"></a>Allure [TestOps](https://allure.autotests.cloud/project/4854)	</a>
 Allure TestOps — это мощный инструмент для управления тестированием, который помогает автоматизировать и оптимизировать процессы тестирования.
 Здесь смотрим, контролируем, управляем, все показываем менеджеру и коллегам
@@ -89,16 +89,16 @@ Allure TestOps — это мощный инструмент для управл�
 </p>  
 
 ____
-## <img alt="Allure" height="25" src="media/Telegram.svg" width="25"/></a> Уведомление в Telegram при помощи бота
+## <img alt="Telegram" height="25" src="media/Telegram.svg" width="25"/></a> Уведомление в Telegram при помощи бота
 О - оперативность. После окончания тестового прогона сразу получаем нотификацию в Телеграм с результатами
-____
+
 <p align="center">  
 <img title="Allure Overview Dashboard" src="media/tgAllert.jpg" width="550">  
 </p>
 
 ____
 ## <img alt="Selenoid" height="25" src="media/Selenoid.svg" width="25"/></a> Примеры видео выполнения тестов на Selenoid
-____
+
 <p align="center">
 <img title="Selenoid Video" src="media/test_video.gif" width="550" height="350"  alt="video">   
 </p>

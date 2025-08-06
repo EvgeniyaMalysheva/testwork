@@ -13,10 +13,9 @@ public class CartPage {
             cookieElement = $("[data-testid='cookieAcceptPopup']"),
             cookieButton = $(".CookieAcceptPopup-module___NInja__button"),
             promoTitle = $(".FourthArtsOffer-module__Yb0qSq__title"),
-            promoTermsLink = $(".FourthArtsOffer-module__Yb0qSq__link"),
-            promoTermsTitle = $(".CmsEntity-module__Su2lMG__title");
+            promoTermsLink = $(".FourthArtsOffer-module__Yb0qSq__link");
 
-    @Step("Открываем главную страницу")
+    @Step("Открываем страницу Корзины")
     public CartPage openCartPage() {
         open("/my-books/cart/");
 
@@ -46,11 +45,5 @@ public class CartPage {
         promoTermsLink.click();
 
         return this;
-    }
-
-    @Step("Отображаются условия корректной акции")
-    public void checkPromoTermsTitle(String promoName) {
-        acceptCookie();
-        promoTermsTitle.shouldHave(text(promoName));
     }
 }

@@ -10,15 +10,17 @@ import org.junit.jupiter.api.*;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
-import pages.CartPage;
-import pages.MainPage;
+import pages.*;
 
 import static com.codeborne.selenide.Selenide.*;
 
 public class TestBase {
 
     protected MainPage mainPage = new MainPage();
+    protected SearchPage searchPage = new SearchPage();
+    protected PromoPage promoPage = new PromoPage();
     protected CartPage cartPage = new CartPage();
+    protected DzenPage dzenPage = new DzenPage();
     protected static final WebConfig webConfig = WebConfigProvider.INSTANCE.getConfig();
 
     @BeforeAll

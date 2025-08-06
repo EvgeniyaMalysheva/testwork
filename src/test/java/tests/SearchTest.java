@@ -24,8 +24,8 @@ public class SearchTest extends TestBase {
     @DisplayName("TC_UI_1: Проверка на непустой результат поиска книг")
     void searchResultsShouldNotBeEmpty(String searchQuery) {
         mainPage.openMainPage()
-                .fillBookSearchInput(searchQuery)
-                .checkFoundBooksNotZero();
+                .fillBookSearchInput(searchQuery);
+        searchPage.checkFoundBooksNotZero();
     }
 
     @CsvSource(value = {
@@ -36,8 +36,8 @@ public class SearchTest extends TestBase {
     @DisplayName("TC_UI_2: Проверка поиска определенной серии книг")
     void searchResultsShouldContainExpectedBookSeries(String searchQuery, String bookName) {
         mainPage.openMainPage()
-                .fillBookSearchInput(searchQuery)
-                .clickNecessaryTab("Серии")
+                .fillBookSearchInput(searchQuery);
+        searchPage.clickNecessaryTab("Серии")
                 .checkBookName(bookName);
     }
 
@@ -47,9 +47,8 @@ public class SearchTest extends TestBase {
     @DisplayName("TC_UI_3: Проверка поиска определенной книги")
     void searchResultsShouldContainExpectedBooks(String searchQuery, String bookName) {
         mainPage.openMainPage()
-                .acceptCookie()
-                .fillBookSearchInput(searchQuery)
-                .findNecessaryTab("Книги")
+                .fillBookSearchInput(searchQuery);
+        searchPage.findNecessaryTab("Книги")
                 .checkBookName(bookName);
     }
 }

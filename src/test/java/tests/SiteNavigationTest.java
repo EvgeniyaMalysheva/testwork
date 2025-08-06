@@ -14,8 +14,8 @@ public class SiteNavigationTest extends TestBase {
     @DisplayName("TC_UI_4: Проверка страницы ввода промокода")
     public void checkPromoCodeWindowTest() {
         mainPage.openMainPage()
-                .pressPromoCodeButton()
-                .checkPromoCodeActivationModule();
+                .pressPromoCodeButton();
+        promoPage.checkPromoCodeActivationModule();
     }
 
     @Test
@@ -30,7 +30,7 @@ public class SiteNavigationTest extends TestBase {
     @DisplayName("TC_UI_6: Переход в сторонний ресурс")
     public void moveToAnotherSiteTest() {
         mainPage.openMainPage()
-                .pressDzenButton()
-                .checkMoveToDzen();
+                .pressDzenButton();
+        dzenPage.checkMoveToDzen();
     }
 }

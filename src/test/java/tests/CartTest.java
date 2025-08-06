@@ -15,9 +15,8 @@ public class CartTest extends TestBase {
     @DisplayName("TC_UI_7: Просмотр условий промо-акции Четвертая книга в подарок")
     public void checkCartPromotionTermsTest() {
         cartPage.openCartPage()
-                .acceptCookie()
                 .checkPromoName(promoName)
-                .pressPromoTermsButton()
-                .checkPromoTermsTitle(promoName);
+                .pressPromoTermsButton();
+        promoPage.checkPromoTermsTitle(promoName);
     }
 }
